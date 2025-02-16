@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import Title from "./components/Title";
 import Project from "./components/Project";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -42,6 +43,8 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <Footer></Footer>
     </Layout>
   );
 }

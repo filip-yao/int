@@ -1,4 +1,4 @@
-import { Aperture, Globe, ShareNetwork } from "@phosphor-icons/react";
+import { Aperture, Globe, Phone, ShareNetwork } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ export default function Navbar() {
         >
           <ShareNetwork size={20} weight="bold" className="mb-1 opacity-80" />
           <div>
-            <span>Social media</span>
+            <span>Sociální sítě</span>
             <div className="group-hover:w-full w-0 h-[2px] bg-white bg-opacity-50 rounded-full transition-all duration-300"></div>
           </div>
         </Link>
@@ -31,7 +31,7 @@ export default function Navbar() {
         >
           <Globe size={20} weight="bold" className="mb-1 opacity-80" />
           <div>
-            <span>Web development</span>
+            <span>Webové stránky</span>
             <div className="group-hover:w-full w-0 h-[2px] bg-white bg-opacity-50 rounded-full transition-all duration-300"></div>
           </div>
         </Link>
@@ -41,7 +41,17 @@ export default function Navbar() {
         >
           <Aperture size={20} weight="bold" className="mb-1 opacity-80" />
           <div>
-            <span>Photography</span>
+            <span>Fotografie</span>
+            <div className="group-hover:w-full w-0 h-[2px] bg-white bg-opacity-50 rounded-full transition-all duration-300"></div>
+          </div>
+        </Link>
+        <Link
+          className="flex items-center gap-2 opacity-80 group"
+          href="/contacts"
+        >
+          <Phone size={20} weight="bold" className="mb-1 opacity-80" />
+          <div>
+            <span>Kontakty</span>
             <div className="group-hover:w-full w-0 h-[2px] bg-white bg-opacity-50 rounded-full transition-all duration-300"></div>
           </div>
         </Link>
