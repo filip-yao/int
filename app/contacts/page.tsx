@@ -1,12 +1,12 @@
 "use client";
 
 import Layout from "../components/Layout";
-import Footer from "../components/Footer";
+import TeamContacts from "../components/TeamContacts";
 
 export default function Home() {
   return (
     <Layout>
-      <Footer></Footer>
+      <TeamContacts />
     </Layout>
   );
 }

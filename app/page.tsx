@@ -5,7 +5,9 @@ import Layout from "./components/Layout";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import Title from "./components/Title";
 import Project from "./components/Project";
-import Footer from "./components/Footer";
+import TeamContacts from "./components/TeamContacts";
+import ServicesSection from "./components/ServicesSection";
+import ProjectsGallery from "./components/ProjectsGallery";
 
 export default function Home() {
   return (
@@ -22,18 +24,21 @@ export default function Home() {
         <div className="flex flex-col gap-4 items-center">
           <h1 className="text-4xl font-semibold">Kosmo Production</h1>
           <div className="flex flex-col opacity-50 text-xl text-center font-normal">
-            <span>Social media management, web development,</span>
-            <span>web design and photography</span>
+            <span>
+              Weby co lákají, grafiky co berou dech,sociální sítě v pohybu
+            </span>
+
+            <span>váš success online startuje zde!</span>
           </div>
 
           <button className="flex items-center gap-2 bg-primary hover:bg-opacity-90 transition-all rounded-full px-6 py-2 mt-12 font-semibold border border-white border-opacity-20">
-            <span>Explore</span>
+            <span>Objevujte</span>
             <MagnifyingGlass weight="bold" />
           </button>
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <Title title="Projects" />
         <div className="grid grid-cols-4">
           <Project
@@ -41,10 +46,11 @@ export default function Home() {
             subtitle="Wordpress  •  Learn more"
             image="Renata Mirková.jpg"
           />
-        </div>
-      </div>
-
-      <Footer></Footer>
+        </div> 
+      </div>*/}
+      <ServicesSection />
+      <ProjectsGallery />
+      <TeamContacts />
     </Layout>
   );
 }
