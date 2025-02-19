@@ -6,14 +6,16 @@ const teamMembers = [
     name: "Filip Yao",
     role: "Frontend Vývojář a IT specialista",
     email: "philip@kosmoproduction.eu",
-    description: "Specialista na React s vášní pro čistý kód a moderní design.",
+    description:
+      "Vizuální kouzelník digitálního prostoru. Přetváří designové návrhy v interaktivní weby a řeší veškeré IT výzvy za vás.",
     imageSrc: "/projects/Renata Mirková.jpg",
   },
   {
     name: "Oskar Petr",
     role: "Webový vývojář",
     email: "oskar@kosmoproduction.eu",
-    description: "Tvořím intuitivní rozhraní s důrazem na uživatelský komfort.",
+    description:
+      "Architekt vašich webových řešení. Vytváří a optimalizuje weby na míru, které jsou rychlé, bezpečné a technicky dokonalé.",
     imageSrc: "/PP/oskar.png",
   },
   {
@@ -21,7 +23,7 @@ const teamMembers = [
     role: "Specialista Sociálních Sítí & Komunikace",
     email: "matthew@kosmoproduction.eu",
     description:
-      "C Vaše podněty řeším rychleji než svůj ranní proteinový shake.",
+      "Vaše spojení se světem online marketingu. Stará se o vaši firemní image na sociálních sítích a plynulou komunikaci s komunitou.",
     imageSrc: "/PP/matthew.png",
   },
   {
@@ -29,7 +31,7 @@ const teamMembers = [
     role: "Fotograf",
     email: "daniel@kosmoproduction.eu",
     description:
-      "Svaly formuje v posilovně, kompozice frame by frame. Propojuji fitness disciplínu s kreativním viděním.",
+      "Dynamický tvůrce multimediálního obsahu. Od návrhů grafiky přes videoprodukci po motion design, váš partner pro pohyblivé obrazy.",
     imageSrc: "/PP/daniel.png",
   },
 
@@ -38,7 +40,7 @@ const teamMembers = [
     role: "Grafik",
     email: "martin@kosmoproduction.eu",
     description:
-      "Pixel perfect přístup k designu doplňuji pravidelnými výběhy s hasičským týmem. Týmová spolupráce je můj druhý dech.",
+      "Vizuální vypravěč vašich příběhů. Zachycuje jedinečné momenty fotografiemi a přetavuje je do poutavých grafických vizuálů.",
     imageSrc: "/projects/Renata Mirková.jpg",
   },
 ];
