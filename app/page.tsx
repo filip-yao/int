@@ -9,6 +9,7 @@ import TeamContacts from "./components/TeamContacts";
 import ServicesSection from "./components/ServicesSection";
 import ProjectsGallery from "./components/ProjectsGallery";
 import Link from "next/link";
+import TechStack from "./components/TechStack";
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ export default function Home() {
         <ServicesSection />
       </div>
       <ProjectsGallery />
+      <TechStack />
       <TeamContacts />
     </Layout>
   );
