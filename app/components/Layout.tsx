@@ -6,7 +6,7 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <div className="">
       <Navbar />
-      <div className="min-h-screen  px-20 ">{children}</div>
+      <div className="min-h-screen  md:px-20 sm:px-20 px-10">{children}</div>
       <Footer />
     </div>
   );

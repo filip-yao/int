@@ -14,7 +14,7 @@ const teamMembers = [
     role: "Webový vývojář",
     email: "oskar@kosmoproduction.eu",
     description: "Tvořím intuitivní rozhraní s důrazem na uživatelský komfort.",
-    imageSrc: "/projects/Renata Mirková.jpg",
+    imageSrc: "/PP/oskar.png",
   },
   {
     name: "Matouš Jašek",
@@ -22,7 +22,7 @@ const teamMembers = [
     email: "matthew@kosmoproduction.eu",
     description:
       "C Vaše podněty řeším rychleji než svůj ranní proteinový shake.",
-    imageSrc: "/projects/Renata Mirková.jpg",
+    imageSrc: "/PP/matthew.png",
   },
   {
     name: "Daniel Hons",
@@ -30,8 +30,9 @@ const teamMembers = [
     email: "daniel@kosmoproduction.eu",
     description:
       "Svaly formuje v posilovně, kompozice frame by frame. Propojuji fitness disciplínu s kreativním viděním.",
-    imageSrc: "/projects/Renata Mirková.jpg",
+    imageSrc: "/PP/daniel.png",
   },
+
   {
     name: "Martin Čeman",
     role: "Grafik",
@@ -44,7 +45,7 @@ const teamMembers = [
 
 export default function TeamContacts() {
   return (
-    <div className="max-w-7xl mx-auto px-4 mb-10 ">
+    <div className="max-w-7xl mx-auto px-4 mb-10 mt-20 ">
       <div className="mb-5">
         <Title title="Náš tým" />
       </div>
@@ -53,7 +54,7 @@ export default function TeamContacts() {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className=" flex flex-col w-fit  items-center p-6 bg-gray-400 rounded-lg shadow-lg"
+            className=" flex flex-col w-fit  items-center p-6 bg-[#18184A] rounded-lg shadow-lg"
           >
             <div className="relative w-32 h-32 mb-4">
               <Image
@@ -61,22 +62,22 @@ export default function TeamContacts() {
                 alt={member.name}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-full border-4 border-blue-950 "
+                className="rounded-full border-4 border-white/10 "
               />
             </div>
 
             <div className="text-center ">
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-white">
                 {member.name}
               </h3>
-              <p className="text-blue-600 mt-1">{member.role}</p>
+              <p className="text-white mt-1">{member.role}</p>
               <a
                 href={`mailto:${member.email}`}
-                className="text-gray-600 hover:text-purple block mt-2"
+                className="text-white hover:text-purple block mt-2"
               >
                 {member.email}
               </a>
-              <p className="text-gray-500 mt-3 text-sm leading-relaxed">
+              <p className="text-white mt-3 text-sm leading-relaxed">
                 {member.description}
               </p>
             </div>

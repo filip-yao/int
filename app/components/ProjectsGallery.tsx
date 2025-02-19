@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Modal from "react-modal";
 import { ArrowRight, ArrowLeft, Plus } from "@phosphor-icons/react";
+import Link from "next/link";
 
 const ProjectsGallery = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -13,13 +14,9 @@ const ProjectsGallery = () => {
       title: "Osobní web a E-shop pro lektorku mandarinštiny",
       image: "/projects/renca_web.png",
       description: "Komplexní e-commerce řešení s integrací platebního systému",
+      detailp: "https://renatamirkova.com",
     },
-    {
-      id: 2,
-      title: "Firemní web pro IT firmu",
-      image: "/projects/it-company.jpg",
-      description: "Moderní prezentace s portfoliem a klientskou zónou",
-    },
+
     // Přidejte další projekty...
   ];
 
@@ -51,7 +48,7 @@ const ProjectsGallery = () => {
             <div className="aspect-square relative">
               <Image
                 src={project.image}
-                alt="pes"
+                alt={project.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -62,13 +59,11 @@ const ProjectsGallery = () => {
               </div>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-[#18184A] to-background ">
               <h3 className="text-white text-lg  font-semibold">
                 {project.title}
               </h3>
-              <p className="text-gray-200 text-sm mt-1">
-                {project.description}
-              </p>
+              <p className="text-white text-sm mt-1">{project.description}</p>
             </div>
           </div>
         ))}
@@ -100,9 +95,11 @@ const ProjectsGallery = () => {
                 <p className="text-gray-600 mb-4">
                   {projects[selectedProject].description}
                 </p>
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-                  Detail projektu
-                </button>
+                <Link href={projects[selectedProject].detailp}>
+                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Detail projektu
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -111,13 +108,13 @@ const ProjectsGallery = () => {
                 onClick={() => handleNavigate("prev")}
                 className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition"
               >
-                <ArrowLeft size={32} />
+                <ArrowLeft size={32} color="black" />
               </button>
               <button
                 onClick={() => handleNavigate("next")}
                 className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition"
               >
-                <ArrowRight size={32} />
+                <ArrowRight size={32} color="black" />
               </button>
             </div>
 
@@ -125,7 +122,7 @@ const ProjectsGallery = () => {
               onClick={() => setIsOpen(false)}
               className="absolute top-4 right-4 bg-white/90 p-2 rounded-full hover:bg-white transition"
             >
-              <Plus size={24} className="rotate-45" />
+              <Plus size={24} color="black" className="rotate-45" />
             </button>
           </div>
         )}
