@@ -15,6 +15,7 @@ export default function ServicesSection() {
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [containerWidth, setContainerWidth] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isOverflowing, setIsOverflowing] = useState(true);
 
   const services = [
     {
@@ -45,13 +46,15 @@ export default function ServicesSection() {
     const handleResize = () => {
       if (scrollContainer.current) {
         setContainerWidth(scrollContainer.current.offsetWidth);
+        const { scrollWidth, clientWidth } = scrollContainer.current;
+        setIsOverflowing(scrollWidth > clientWidth);
       }
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [containerWidth]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,10 +102,13 @@ export default function ServicesSection() {
   });
 
   const updateArrowsVisibility = () => {
-    if (scrollContainer.current) {
+    if (scrollContainer.current && isOverflowing) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current;
       setShowLeftArrow(scrollLeft > 10);
       setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    } else {
+      setShowLeftArrow(false);
+      setShowRightArrow(false);
     }
   };
 
@@ -133,7 +139,7 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Navigace s tečkami - pouze pro mobil */}
+        {/* Mobile navigation */}
         <div className="flex items-center justify-center gap-4 mt-8 md:hidden">
           <button
             onClick={() => handleScroll("left")}
@@ -163,9 +169,9 @@ export default function ServicesSection() {
           </button>
         </div>
 
-        {/* Šipky pro desktop */}
+        {/* Desktop arrows */}
         <div className="hidden md:block">
-          {showLeftArrow && (
+          {isOverflowing && showLeftArrow && (
             <button
               onClick={() => handleScroll("left")}
               className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
@@ -175,7 +181,7 @@ export default function ServicesSection() {
             </button>
           )}
 
-          {showRightArrow && (
+          {isOverflowing && showRightArrow && (
             <button
               onClick={() => handleScroll("right")}
               className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
