@@ -42,16 +42,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div>
-        <Title title="Projects" />
-        <div className="grid grid-cols-4">
-          <Project
-            title="Chinese courses"
-            subtitle="Wordpress  •  Learn more"
-            image="Renata Mirkodvá.jpg"
-          />
-        </div> 
-      </div>*/}
       <div id="codelame">
         <ServicesSection />
       </div>
