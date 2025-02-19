@@ -48,7 +48,7 @@ export default function Home() {
           <Project
             title="Chinese courses"
             subtitle="Wordpress  •  Learn more"
-            image="Renata Mirková.jpg"
+            image="Renata Mirkodvá.jpg"
           />
         </div> 
       </div>*/}
