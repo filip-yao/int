@@ -8,7 +8,7 @@ const teamMembers = [
     email: "philip@kosmoproduction.eu",
     description:
       "Vizuální kouzelník digitálního prostoru. Přetváří designové návrhy v interaktivní weby a řeší veškeré IT výzvy za vás.",
-    imageSrc: "/projects/Renata Mirková.jpg",
+    imageSrc: "/PP/philip.png",
   },
   {
     name: "Oskar Petr",
