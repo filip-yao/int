@@ -117,7 +117,7 @@ const TechStack = () => {
         {categories.map((category) => (
           <div
             key={category.name}
-            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-gray-400 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-4 text-gray-800 border-b-2 pb-2">
