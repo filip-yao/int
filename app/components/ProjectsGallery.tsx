@@ -11,7 +11,7 @@ const ProjectsGallery = () => {
   const projects = [
     {
       id: 1,
-      title: "Osobní web a E-shop pro lektorku mandarinštiny",
+      title: "Osobní web a E-shop pro lektorku mandarínštiny",
       image: "/projects/renca_web.png",
       description: "Komplexní e-commerce řešení s integrací platebního systému",
       detailp: "https://renatamirkova.com",

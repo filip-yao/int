@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   background-color: #090A21;
   color: #EFECEA;
 }
+
 
 @font-face {
   font-family: "Nohemi";

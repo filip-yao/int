@@ -10,11 +10,13 @@ import ServicesSection from "./components/ServicesSection";
 import ProjectsGallery from "./components/ProjectsGallery";
 import Link from "next/link";
 import TechStack from "./components/TechStack";
+import ScrollArrow from "./components/ScrollArrow";
 
 export default function Home() {
   return (
     <Layout>
-      <div className="flex flex-col items-center md:pt-80  lg:pt-80 pt-40  h-screen">
+      <ScrollArrow />
+      <div className="flex flex-col items-center md:pt-60  lg:pt-50 pt-40  pb-14">
         <Image
           src="/Decoration.png"
           alt="Decoration"
@@ -29,7 +31,7 @@ export default function Home() {
           </h1>
           <div className="flex flex-col opacity-50 text-xl text-center font-normal">
             <span>
-              Weby co lákají, grafiky co berou dech,sociální sítě v pohybu
+              Weby co lákají, grafiky co berou dech, sociální sítě v pohybu
             </span>
 
             <span>váš success online startuje zde!</span>

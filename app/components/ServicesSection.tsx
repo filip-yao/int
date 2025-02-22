@@ -19,26 +19,35 @@ export default function ServicesSection() {
 
   const services = [
     {
-      icon: <Globe size={48} weight="duotone" color="#100c24" />,
+      icon: <Globe size={48} weight="duotone" color="#3b82f6" />,
       title: "Vývoj webů",
       description:
         "Moderní a responzivní webové stránky na míru s podporou SEO",
+      bgColor: "bg-blue-50 ",
+      textColor: "text-blue-900",
     },
     {
-      icon: <Camera size={48} weight="duotone" color="#100c24" />,
+      icon: <PaintBrush size={48} weight="duotone" color="#10b981" />,
+      title: "Grafický design",
+      description: "Logo design, tiskoviny a kompletní corporate identity",
+      bgColor: "bg-green-50",
+      textColor: "text-green-900",
+    },
+    {
+      icon: <Camera size={48} weight="duotone" color="#8b5cf6" />,
       title: "Profesionální fotografie",
       description:
         "Produktové, interiérové a eventové fotografie v profesionální kvalitě",
+      bgColor: "bg-purple-50",
+      textColor: "text-purple-900",
     },
+    
     {
-      icon: <PaintBrush size={48} weight="duotone" color="#100c24" />,
-      title: "Grafický design",
-      description: "Logo design, tiskoviny a kompletní corporate identity",
-    },
-    {
-      icon: <TrendUp size={48} weight="duotone" color="#100c24" />,
+      icon: <TrendUp size={48} weight="duotone" color="#f59e0b" />,
       title: "Sociální sítě",
       description: "Komplexní správa profilů a tvorba obsahu pro sociální sítě",
+      bgColor: "bg-yellow-50",
+      textColor: "text-yellow-900",
     },
   ];
 
@@ -126,13 +135,13 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-72 bg-gray-400 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow snap-start"
+              className={`flex-shrink-0 w-72 ${service.bgColor} p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow snap-start`}
             >
-              <div className="text-blue-600 mb-6">{service.icon}</div>
-              <h3 className="text-xl text-black font-semibold mb-4">
+              <div className="mb-6">{service.icon}</div>
+              <h3 className={`text-xl ${service.textColor} font-semibold mb-4`}>
                 {service.title}
               </h3>
-              <p className="text-background leading-relaxed">
+              <p className={`${service.textColor} leading-relaxed`}>
                 {service.description}
               </p>
             </div>

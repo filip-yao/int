@@ -53,38 +53,39 @@ export default function TeamContacts() {
       </div>
 
       <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className=" flex flex-col w-fit  items-center p-6 bg-[#18184A] rounded-lg shadow-lg"
-          >
-            <div className="relative w-32 h-32 mb-4">
-              <Image
-                src={member.imageSrc}
-                alt={member.name}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-full border-4 border-white/10 "
-              />
-            </div>
+        {teamMembers.map((member, index) => {
+          return (
+            <div
+              key={index}
+              className=" flex flex-col w-fit  items-center p-6 bg-[#18184A] rounded-lg shadow-lg"
+            >
+              <div className="relative w-32 h-32 mb-4">
+                <Image
+                  src={member.imageSrc}
+                  alt={member.name}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full border-4 border-white/10 " />
+              </div> 
 
-            <div className="text-center ">
-              <h3 className="text-xl font-semibold text-white">
-                {member.name}
-              </h3>
-              <p className="text-white mt-1">{member.role}</p>
-              <a
-                href={`mailto:${member.email}`}
-                className="text-white hover:text-purple block mt-2"
-              >
-                {member.email}
-              </a>
-              <p className="text-white mt-3 text-sm leading-relaxed">
-                {member.description}
-              </p>
+              <div className="text-center ">
+                <h3 className="text-xl font-semibold text-white">
+                  {member.name}
+                </h3>
+                <p className="text-white mt-1">{member.role}</p>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="text-white hover:text-purple block mt-2"
+                >
+                  {member.email}
+                </a>
+                <p className="text-white mt-3 text-sm leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
