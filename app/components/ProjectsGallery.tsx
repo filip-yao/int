@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Modal from "react-modal";
-import { ArrowRight, ArrowLeft, Plus } from "@phosphor-icons/react";
-import Link from "next/link";
+import { ArrowRight, ArrowLeft, Plus, CaretLeft } from "@phosphor-icons/react";
+import { useRouter } from "next/navigation";
 
 const ProjectsGallery = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [showProjectDetail, setShowProjectDetail] = useState(false);
+  const [iframeUrl, setIframeUrl] = useState("");
+  const router = useRouter();
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const projects = [
     {
@@ -16,9 +20,19 @@ const ProjectsGallery = () => {
       description: "Komplexní e-commerce řešení s integrací platebního systému",
       detailp: "https://renatamirkova.com",
     },
-
     // Přidejte další projekty...
   ];
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data.type === "navigation") {
+        setIframeUrl(event.data.url);
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   const handleNavigate = (direction: "next" | "prev") => {
     if (selectedProject === null) return;
@@ -31,8 +45,33 @@ const ProjectsGallery = () => {
     setSelectedProject(newIndex);
   };
 
+  const handleProjectDetail = (url: string) => {
+    setIsOpen(false);
+    setShowProjectDetail(true);
+    setIframeUrl(url);
+  };
+
+  const injectNavigationHandler = () => {
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(
+        {
+          type: "injectNavigationHandler",
+          handler: `
+            document.body.addEventListener('click', function(e) {
+              if (e.target.tagName === 'A') {
+                e.preventDefault();
+                window.parent.postMessage({ type: 'navigation', url: e.target.href }, '*');
+              }
+            });
+          `,
+        },
+        "*"
+      );
+    }
+  };
+
   return (
-    <section className="py-16 px-4 ">
+    <section className="py-16 px-4">
       <h2 className="text-3xl font-bold text-center mb-12">Naše projekty</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -55,12 +94,12 @@ const ProjectsGallery = () => {
               />
 
               <div className="absolute p-2 inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <Plus size={48} className="text-white  animate-pulse" />
+                <Plus size={48} className="text-white animate-pulse" />
               </div>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-[#18184A] to-background ">
-              <h3 className="text-white text-lg  font-semibold">
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-b from-[#18184A] to-background">
+              <h3 className="text-white text-lg font-semibold">
                 {project.title}
               </h3>
               <p className="text-white text-sm mt-1">{project.description}</p>
@@ -72,12 +111,12 @@ const ProjectsGallery = () => {
       <Modal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
-        className="outline-none max-w-4xl mx-auto my-12"
-        overlayClassName="fixed inset-0 bg-black/75 backdrop-blur-sm z-50"
+        className="outline-none max-w-4xl mx-auto my-12 w-11/12 relative bg-transparent"
+        overlayClassName="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 flex items-center justify-center"
         ariaHideApp={false}
       >
         {selectedProject !== null && (
-          <div className="relative bg-white rounded-xl p-6">
+          <div className="relative bg-[#18184A] rounded-xl p-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="relative aspect-square">
                 <Image
@@ -89,44 +128,76 @@ const ProjectsGallery = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-black mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   {projects[selectedProject].title}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-white-600 mb-4">
                   {projects[selectedProject].description}
                 </p>
-                <Link href={projects[selectedProject].detailp}>
-                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-                    Detail projektu
-                  </button>
-                </Link>
+                <button
+                  onClick={() => handleProjectDetail(projects[selectedProject].detailp)}
+                  className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Detail projektu
+                </button>
               </div>
             </div>
 
-            <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4">
-              <button
-                onClick={() => handleNavigate("prev")}
-                className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition"
-              >
-                <ArrowLeft size={32} color="black" />
-              </button>
-              <button
-                onClick={() => handleNavigate("next")}
-                className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition"
-              >
-                <ArrowRight size={32} color="black" />
-              </button>
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4">
+              {selectedProject > 0 && (
+                <button
+                  onClick={() => handleNavigate("prev")}
+                  className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition"
+                >
+                  <ArrowLeft size={32} color="black" />
+                </button>
+              )}
+              {selectedProject < projects.length - 1 && (
+                <button
+                  onClick={() => handleNavigate("next")}
+                  className="bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition ml-auto"
+                >
+                  <ArrowRight size={32} color="black" />
+                </button>
+              )}
             </div>
-
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 bg-white/90 p-2 rounded-full hover:bg-white transition"
-            >
-              <Plus size={24} color="black" className="rotate-45" />
-            </button>
           </div>
         )}
+         <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2 bg-primary hover:bg-opacity-90 transition-all rounded-full px-6 py-2 m-2 font-semibold border border-white border-opacity-20"
+              >
+                
+                Zavřít
+              </button>
+            </div>
       </Modal>
+
+      {showProjectDetail && (
+        <div className="fixed inset-0 bg-background z-50 flex flex-col">
+          <div className="p-4">
+            <button
+              onClick={() => {
+                setShowProjectDetail(false);
+                setIsOpen(true);
+              }}
+              className="flex items-center gap-2 bg-primary hover:bg-opacity-90 transition-all rounded-full px-6 py-2 font-semibold border border-white border-opacity-20"
+            >
+              <CaretLeft size={24} />
+              <span className="ml-2 mt-[2px]">Zpět na galerii projektů</span>
+            </button>
+          </div>
+          <div className="flex-grow overflow-hidden">
+            <iframe
+              ref={iframeRef}
+              src={iframeUrl}
+              className="w-full h-full border-none"
+              onLoad={injectNavigationHandler}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

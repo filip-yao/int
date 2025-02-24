@@ -56,7 +56,7 @@ const TechStack = () => {
           url: "https://github.com/",
         },
         {
-          icon: <TbApi className="w-6 h-6 text-purple-600" />,
+          icon: <Image src="https://cdn.european-alternatives.eu/productLogo/40b3ede3-3459-4939-8bfc-566811033cb9/responsive-images/telemetrydeck-logo___productLogoWebp_501_501.webp" width={35} height={35} alt="Telemetry Deck" />,
           title: "Telemetry Deck",
           url: "https://telemetrydeck.com/",
         },
