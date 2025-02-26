@@ -41,7 +41,7 @@ const teamMembers = [
     email: "martin@kosmoproduction.eu",
     description:
       "Vizuální vypravěč vašich příběhů. Zachycuje jedinečné momenty fotografiemi a přetavuje je do poutavých grafických vizuálů.",
-    imageSrc: "/projects/Renata Mirková.jpg",
+    imageSrc: "/projects/martin.png",
   },
 ];
 
