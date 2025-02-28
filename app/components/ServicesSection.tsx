@@ -23,8 +23,9 @@ export default function ServicesSection() {
       title: "Vývoj webů",
       description:
         "Moderní a responzivní webové stránky na míru s podporou SEO",
-      bgColor: "bg-blue-50 ",
+      bgColor: "bg-blue-50",
       textColor: "text-blue-900",
+      path: "../Services/web-development",
     },
     {
       icon: <PaintBrush size={48} weight="duotone" color="#10b981" />,
@@ -32,6 +33,7 @@ export default function ServicesSection() {
       description: "Logo design, tiskoviny a kompletní corporate identity",
       bgColor: "bg-green-50",
       textColor: "text-green-900",
+      path: "../Services/graphic",
     },
     {
       icon: <Camera size={48} weight="duotone" color="#8b5cf6" />,
@@ -40,14 +42,15 @@ export default function ServicesSection() {
         "Produktové, interiérové a eventové fotografie v profesionální kvalitě",
       bgColor: "bg-purple-50",
       textColor: "text-purple-900",
+      path: "../Services/photography",
     },
-    
     {
       icon: <TrendUp size={48} weight="duotone" color="#f59e0b" />,
       title: "Sociální sítě",
       description: "Komplexní správa profilů a tvorba obsahu pro sociální sítě",
       bgColor: "bg-yellow-50",
       textColor: "text-yellow-900",
+      path: "../Services/social-media",
     },
   ];
 
@@ -133,9 +136,10 @@ export default function ServicesSection() {
           onScroll={updateArrowsVisibility}
         >
           {services.map((service, index) => (
-            <div
+            <a
               key={index}
-              className={`flex-shrink-0 w-72 ${service.bgColor} p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow snap-start`}
+              href={service.path}
+              className={`flex-shrink-0 w-72 ${service.bgColor} p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow snap-start block cursor-pointer`}
             >
               <div className="mb-6">{service.icon}</div>
               <h3 className={`text-xl ${service.textColor} font-semibold mb-4`}>
@@ -144,7 +148,7 @@ export default function ServicesSection() {
               <p className={`${service.textColor} leading-relaxed`}>
                 {service.description}
               </p>
-            </div>
+            </a>
           ))}
         </div>
 
