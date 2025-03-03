@@ -16,7 +16,7 @@ export default function Footer() {
             </Link>
           </div>
           <div>
-            <text className="text-base ">Copyright © 2025 Filip Yao </text>
+            <text className="text-base ">Copyright © 2025 VAON s.r.o. </text>
           </div>
         </div>
       </div>
