@@ -19,7 +19,7 @@ const TechStack = () => {
   const categories = [
     {
       name: "Web Development",
-      icon: <SiReact className="w-6 h-6" />,
+      icon: <SiReact className="w-6 h-6  text-black" />,
       gradient: "from-blue-400 to-cyan-400",
       iconColor: "text-blue-400",
       items: [
@@ -67,7 +67,7 @@ const TechStack = () => {
     },
     {
       name: "Grafika",
-      icon: <SiFigma className="w-6 h-6" />,
+      icon: <SiFigma className="w-6 h-6  text-black" />,
       gradient: "from-purple-400 to-pink-400",
       iconColor: "text-purple-400",
       items: [
