@@ -13,7 +13,7 @@ export default function Footer() {
         boxShadow: "0 -4px 30px rgba(0, 0, 0, 0.1)"
       }}
     >
-      {/* Dekorativní prvky pro glassmorphism efekt */}
+      {/* Decorative elements for glassmorphism effect */}
       <div className="absolute -z-10 top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-10 left-10 w-40 h-40 bg-purple-500 rounded-full filter blur-3xl opacity-10"></div>
         <div className="absolute bottom-5 right-20 w-32 h-32 bg-blue-600 rounded-full filter blur-3xl opacity-10"></div>
@@ -28,7 +28,7 @@ export default function Footer() {
           }}
         >
           <h3 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-blue-300">
-            Základní informace
+            Basic Information
           </h3>
           
           <div className="flex items-center gap-2 mb-2 group">
