@@ -11,12 +11,12 @@ import { Camera, Image, PencilSimple, ShareNetwork, ArrowRight } from '@phosphor
 import { motion } from 'framer-motion';
 
 const photoProjects = [
-  { id: 1, image: '/Slidshow_photo/Portrait.png', title: 'Portrétní fotografie', description: 'Zachycení osobnosti a emocí v každém snímku' },
-  { id: 2, image: '/Slidshow_photo/Landscape.png', title: 'Krajinářská fotografie', description: 'Dechberoucí záběry přírody a krajiny' },
-  { id: 3, image: '/Slidshow_photo/Event.png', title: 'Eventová fotografie', description: 'Profesionální dokumentace vašich akcí' },
+  { id: 1, image: '/Slidshow_photo/Portrait.png', title: 'Portrait Photography', description: 'Capturing personality and emotions in every shot' },
+  { id: 2, image: '/Slidshow_photo/Landscape.png', title: 'Landscape Photography', description: 'Breathtaking views of nature and landscapes' },
+  { id: 3, image: '/Slidshow_photo/Event.png', title: 'Event Photography', description: 'Professional documentation of your events' },
 ];
 
-const photoStyles = ['Portrét', 'Krajina', 'Architektura', 'Reportáž', 'Produktová'];
+const photoStyles = ['Portrait', 'Landscape', 'Architecture', 'Reportage', 'Product'];
 
 const Photography: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -65,7 +65,7 @@ const Photography: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-5xl sm:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-teal-300"
         >
-          Profesionální fotografické služby
+          Professional Photography Services
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ const Photography: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-2xl mb-10"
         >
-          Zachytíme vaše okamžiky s dokonalou precizností
+          We capture your moments with perfect precision
         </motion.p>
         <motion.a 
           href="/contacts" 
@@ -82,7 +82,7 @@ const Photography: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-3 px-8 rounded-full text-lg font-medium hover:from-blue-600 hover:to-teal-600 transition duration-300"
         >
-          Rezervovat focení
+          Book a Photoshoot
           <ArrowRight size={20} weight="bold" />
         </motion.a>
       </section>
@@ -91,7 +91,7 @@ const Photography: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-white">Naše fotografické portfolio</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">Our Photography Portfolio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {photoProjects.map((project) => (
               <motion.div
@@ -118,7 +118,7 @@ const Photography: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-3 px-8 rounded-full text-lg font-medium hover:from-blue-600 hover:to-teal-600 transition duration-300"
             >
-              Zobrazit celou galerii
+              View Full Gallery
               <ArrowRight size={20} weight="bold" />
             </motion.a>
           </div>
@@ -127,13 +127,13 @@ const Photography: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-blue-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Naše fotografické služby</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Photography Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Camera, title: "Portrétní", description: "Zachytíme vaši osobnost a emoce v každém snímku." },
-              { icon: Image, title: "Produktová", description: "Prezentujte své produkty v tom nejlepším světle." },
-              { icon: PencilSimple, title: "Retušování", description: "Profesionální úpravy a retušování vašich fotografií." },
-              { icon: ShareNetwork, title: "Sociální média", description: "Obsah optimalizovaný pro vaše sociální sítě." }
+              { icon: Camera, title: "Portrait", description: "We capture your personality and emotions in every shot." },
+              { icon: Image, title: "Product", description: "Present your products in the best light." },
+              { icon: PencilSimple, title: "Retouching", description: "Professional editing and retouching of your photos." },
+              { icon: ShareNetwork, title: "Social Media", description: "Content optimized for your social networks." }
             ].map((item, index) => (
               <motion.div 
                 key={item.title}
@@ -158,12 +158,12 @@ const Photography: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-white">Cenová nabídka</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">Price List</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Základní", price: "2 500 Kč", features: ["1 hodina focení", "10 upravených fotografií", "Online galerie"] },
-              { title: "Standard", price: "4 500 Kč", features: ["2 hodiny focení", "20 upravených fotografií", "Online galerie", "Tisk 5 fotografií"] },
-              { title: "Premium", price: "8 000 Kč", features: ["4 hodiny focení", "40 upravených fotografií", "Online galerie", "Tisk 10 fotografií", "Fotoalbum"] }
+              { title: "Basic", price: "$120", features: ["1 hour photoshoot", "10 edited photos", "Online gallery"] },
+              { title: "Standard", price: "$220", features: ["2 hours photoshoot", "20 edited photos", "Online gallery", "5 printed photos"] },
+              { title: "Premium", price: "$380", features: ["4 hours photoshoot", "40 edited photos", "Online gallery", "10 printed photos", "Photo album"] }
             ].map((plan, index) => (
               <motion.div 
                 key={plan.title}
@@ -190,7 +190,7 @@ const Photography: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-6 rounded-full text-lg font-medium hover:from-blue-600 hover:to-teal-600 transition duration-300"
                 >
-                  Objednat
+                  Order
                 </motion.a>
               </motion.div>
             ))}
@@ -200,15 +200,15 @@ const Photography: React.FC = () => {
 
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-900 to-gray-900">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-white">Rezervujte si termín focení</h2>
-          <p className="text-xl mb-10 text-white/80">Připraveni zachytit vaše jedinečné okamžiky?</p>
+          <h2 className="text-3xl font-bold mb-8 text-white">Book Your Photoshoot Date</h2>
+          <p className="text-xl mb-10 text-white/80">Ready to capture your unique moments?</p>
           <motion.a 
             href="/contacts" 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-3 px-8 rounded-full text-lg font-medium hover:from-blue-600 hover:to-teal-600 transition duration-300"
           >
-            Kontaktujte nás
+            Contact Us
             <ArrowRight size={20} weight="bold" />
           </motion.a>
         </div>

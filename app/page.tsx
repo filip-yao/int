@@ -64,9 +64,9 @@ return (
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <span>
-          Weby co lákají, grafiky co berou dech, sociální sítě v pohybu
+          Websites that captivate, designs that take your breath away, social media in motion
         </span>
-        <span>váš success online startuje zde!</span>
+        <span>your online success starts here!</span>
       </motion.div>
       
       <motion.div
@@ -84,7 +84,7 @@ return (
               boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)"
             }}
           >
-            <span className="text-white">Objevujte</span>
+            <span className="text-white">Discover</span>
             <MagnifyingGlass weight="bold" className="text-white group-hover:rotate-12 transition-transform duration-300" size={22} />
           </button>
         </Link>
