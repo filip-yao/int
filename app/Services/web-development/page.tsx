@@ -155,7 +155,7 @@ const Home: React.FC = () => {
 
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-gray-900">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-white">Let's collaborate</h2>
+          <h2 className="text-3xl font-bold mb-8 text-white">Let&apos;s collaborate</h2>
           <p className="text-xl mb-10 text-white/80">Ready to take your project to the next level?</p>
           <motion.a 
             href="/contacts" 
