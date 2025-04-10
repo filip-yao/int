@@ -21,31 +21,29 @@ export default function ServicesSection() {
   const services = [
     {
       icon: <Globe size={48} weight="duotone" className="text-black" />,
-      title: "Vývoj webů",
-      description:
-        "Moderní a responzivní webové stránky na míru s podporou SEO",
+      title: "Web Development",
+      description: "Modern and responsive custom websites with SEO support",
       gradient: "from-blue-400 to-indigo-500",
       path: "../Services/web-development",
     },
     {
       icon: <PaintBrush size={48} weight="duotone" className="text-black" />,
-      title: "Grafický design",
-      description: "Logo design, tiskoviny a kompletní corporate identity",
+      title: "Graphic Design",
+      description: "Logo design, print materials, and complete corporate identity",
       gradient: "from-green-400 to-teal-500",
       path: "../Services/graphic",
     },
     {
       icon: <Camera size={48} weight="duotone" className="text-black" />,
-      title: "Profesionální fotografie",
-      description:
-        "Produktové, interiérové a eventové fotografie v profesionální kvalitě",
+      title: "Professional Photography",
+      description: "Product, interior, and event photography in professional quality",
       gradient: "from-purple-400 to-pink-500",
       path: "../Services/photography",
     },
     {
       icon: <TrendUp size={48} weight="duotone" className="text-black" />,
-      title: "Sociální sítě",
-      description: "Komplexní správa profilů a tvorba obsahu pro sociální sítě",
+      title: "Social Media",
+      description: "Comprehensive profile management and content creation for social media",
       gradient: "from-yellow-400 to-orange-500",
       path: "../Services/social-media",
     },
@@ -136,7 +134,7 @@ export default function ServicesSection() {
         transition={{ duration: 0.6 }}
         className="text-3xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300"
       >
-        Co děláme?
+        What We Do?
       </motion.h2>
 
       <div className="relative max-w-7xl mx-auto">
@@ -185,7 +183,7 @@ export default function ServicesSection() {
           <button
             onClick={() => handleScroll("left")}
             className="p-3 rounded-full transition-all duration-300"
-            aria-label="Předchozí služba"
+            aria-label="Previous Service"
             style={{
               background: "rgba(255, 255, 255, 0.1)",
               backdropFilter: "blur(8px)",
@@ -211,7 +209,7 @@ export default function ServicesSection() {
           <button
             onClick={() => handleScroll("right")}
             className="p-3 rounded-full transition-all duration-300"
-            aria-label="Následující služba"
+            aria-label="Next Service"
             style={{
               background: "rgba(255, 255, 255, 0.1)",
               backdropFilter: "blur(8px)",
@@ -231,7 +229,7 @@ export default function ServicesSection() {
               exit={{ opacity: 0, x: 20 }}
               onClick={() => handleScroll("left")}
               className="absolute left-0 top-1/2 -translate-y-1/2 p-4 rounded-full transition-all duration-300 z-10"
-              aria-label="Předchozí služba"
+              aria-label="Previous Service"
               style={{
                 background: "rgba(255, 255, 255, 0.1)",
                 backdropFilter: "blur(8px)",
@@ -250,7 +248,7 @@ export default function ServicesSection() {
               exit={{ opacity: 0, x: -20 }}
               onClick={() => handleScroll("right")}
               className="absolute right-0 top-1/2 -translate-y-1/2 p-4 rounded-full transition-all duration-300 z-10"
-              aria-label="Následující služba"
+              aria-label="Next Service"
               style={{
                 background: "rgba(255, 255, 255, 0.1)",
                 backdropFilter: "blur(8px)",

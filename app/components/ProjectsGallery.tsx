@@ -16,12 +16,12 @@ const ProjectsGallery = () => {
   const projects = [
     {
       id: 1,
-      title: "Osobní web a E-shop pro lektorku mandarínštiny",
+      title: "Personal Website and E-shop for a Mandarin Teacher",
       image: "/projects/renca_web.png",
-      description: "Komplexní e-commerce řešení s integrací platebního systému",
+      description: "Comprehensive E-commerce Solution with Payment System Integration",
       detailp: "https://renatamirkova.com",
     },
-    // Přidejte další projekty...
+    // Add more projects...
   ];
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const ProjectsGallery = () => {
         transition={{ duration: 0.6 }}
         className="text-3xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-blue-300"
       >
-        Naše projekty
+        Our Projects
       </motion.h2>
 
       <motion.div 
@@ -170,7 +170,7 @@ const ProjectsGallery = () => {
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/30 backdrop-blur-md border border-white/10 text-white/90 hover:bg-black/50 transition-all duration-300"
-                aria-label="Zavřít"
+                aria-label="Close"
               >
                 <X size={20} weight="bold" />
               </button>
@@ -212,7 +212,7 @@ const ProjectsGallery = () => {
                         handleNavigate("prev");
                       }}
                       className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
-                      aria-label="Předchozí projekt"
+                      aria-label="Previous Project"
                     >
                       <ArrowLeft size={24} weight="bold" />
                     </button>
@@ -224,7 +224,7 @@ const ProjectsGallery = () => {
                         handleNavigate("next");
                       }}
                       className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300 ml-auto"
-                      aria-label="Další projekt"
+                      aria-label="Next Project"
                     >
                       <ArrowRight size={24} weight="bold" />
                     </button>
@@ -259,7 +259,7 @@ const ProjectsGallery = () => {
                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/80 to-blue-500/80 text-white font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 backdrop-blur-sm"
               >
                 <CaretLeft size={20} weight="bold" />
-                <span>Zpět na galerii projektů</span>
+                <span>Back to Project Gallery</span>
               </button>
             </div>
             <div className="flex-grow overflow-hidden">

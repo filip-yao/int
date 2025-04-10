@@ -112,7 +112,7 @@ return (
     <motion.div 
       className="absolute top-40 right-20 w-24 h-24 rounded-2xl hidden lg:block"
       initial={{ opacity: 0, rotate: 10 }}
-      animate={{ opacity: 1, rotate: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1 }}
       style={{
         background: "rgba(255, 255, 255, 0.05)",
@@ -129,7 +129,7 @@ return (
     <motion.div 
       className="absolute top-80 left-20 w-20 h-20 rounded-2xl hidden lg:block"
       initial={{ opacity: 0, rotate: -5 }}
-      animate={{ opacity: 1, rotate: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1.2 }}
       style={{
         background: "rgba(255, 255, 255, 0.05)",
