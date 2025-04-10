@@ -133,7 +133,7 @@ const TechStack = () => {
         transition={{ duration: 0.6 }}
         className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
       >
-        Naše technologie
+        Our Technologies
       </motion.h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

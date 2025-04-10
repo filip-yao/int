@@ -4,42 +4,42 @@ import Title from "./Title";
 const teamMembers = [
   {
     name: "Filip Yao",
-    role: "Frontend Vývojář a IT specialista",
+    role: "Frontend Developer and IT Specialist",
     email: "philip@kosmoproduction.eu",
     description:
-      "Vizuální kouzelník digitálního prostoru. Přetváří designové návrhy v interaktivní weby a řeší veškeré IT výzvy za vás.",
+      "A visual magician of the digital space. Transforms design concepts into interactive websites and solves all IT challenges for you.",
     imageSrc: "/PP/philip.png",
   },
   {
     name: "Oskar Petr",
-    role: "Webový vývojář",
+    role: "Web Developer",
     email: "oskar@kosmoproduction.eu",
     description:
-      "Architekt vašich webových řešení. Vytváří a optimalizuje weby na míru, které jsou rychlé, bezpečné a technicky dokonalé.",
+      "The architect of your web solutions. Creates and optimizes custom websites that are fast, secure, and technically perfect.",
     imageSrc: "/PP/oskar.png",
   },
   {
     name: "Matouš Jašek",
-    role: "Specialista Sociálních Sítí & Komunikace",
+    role: "Social Media & Communication Specialist",
     email: "matthew@kosmoproduction.eu",
     description:
-      "Vaše spojení se světem online marketingu. Stará se o vaši firemní image na sociálních sítích a plynulou komunikaci s komunitou.",
+      "Your connection to the world of online marketing. Manages your corporate image on social media and ensures smooth communication with the community.",
     imageSrc: "/PP/matthew.png",
   },
   {
     name: "Daniel Hons",
-    role: "Fotograf",
+    role: "Photographer",
     email: "daniel@kosmoproduction.eu",
     description:
-      "Dynamický tvůrce multimediálního obsahu. Od návrhů grafiky přes videoprodukci po motion design, váš partner pro pohyblivé obrazy.",
+      "A dynamic creator of multimedia content. From graphic design to video production and motion design, your partner for moving visuals.",
     imageSrc: "/PP/daniel.png",
   },
   {
     name: "Martin Čeman",
-    role: "Grafik",
+    role: "Graphic Designer",
     email: "martin@kosmoproduction.eu",
     description:
-      "Vizuální vypravěč vašich příběhů. Zachycuje jedinečné momenty fotografiemi a přetavuje je do poutavých grafických vizuálů.",
+      "A visual storyteller of your stories. Captures unique moments through photography and transforms them into engaging graphic visuals.",
     imageSrc: "/PP/martin.png",
   },
 ];
@@ -48,10 +48,10 @@ export default function TeamContacts() {
   return (
     <div className="max-w-7xl mx-auto px-4 mb-20 mt-32 relative z-10">
       <div className="mb-12 text-center">
-        <Title title="Náš tým" />
+        <Title title="Our Team" />
       </div>
 
-      {/* Dekorativní prvky pro pozadí */}
+      {/* Decorative background elements */}
       <div className="absolute -z-10 top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-600 rounded-full filter blur-3xl opacity-20"></div>

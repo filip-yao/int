@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 export default function Steps() {
 const steps = [
 {
-title: "Konzultace",
-description: "Naše konzultace jsou bezplatné a nastíní Vám, jaké možnosti můžete využít.",
+title: "Consultation",
+description: "Our consultations are free and outline the options you can take advantage of.",
 icon: <NotePencil size={60} weight="duotone" className="text-black" />,
 gradient: "from-blue-400 to-indigo-500",
 },
 {
-title: "Návrh řešení",
-description: "Předložení optimálního řešení pro Vaši představu o dosažení výsledku.",
+title: "Solution Proposal",
+description: "Presenting the optimal solution for your vision of achieving results.",
 icon: <GearSix size={60} weight="duotone" className="text-black" />,
 gradient: "from-purple-400 to-pink-500",
 },
 {
-title: "Podpora",
-description: "Klientská péče v průběhu spolupráce. Analýzy výsledků a optimalizace.",
+title: "Support",
+description: "Client care during collaboration. Analysis of results and optimization.",
 icon: <ChartBarHorizontal size={60} weight="duotone" className="text-black" />,
 gradient: "from-green-400 to-teal-500",
 },
 {
-title: "Legislativa",
-description: "Dbáme na dodržování požadavků v legislativě a licenčních právech.",
+title: "Legislation",
+description: "We ensure compliance with legislative requirements and licensing rights.",
 icon: <ShieldCheck size={60} weight="duotone" className="text-black" />,
 gradient: "from-yellow-400 to-orange-500",
 },
@@ -55,10 +55,10 @@ return (
       transition={{ duration: 0.6 }}
     >
       <h2 className="text-4xl font-bold mb-4">
-        Proč právě s námi? <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">Jak pracujeme</span>
+        Why Choose Us? <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">How We Work</span>
       </h2>
       <p className="mt-4 text-xl text-white/70 max-w-3xl mx-auto">
-        Neztrácejte drahocenný čas. Využijte našich nezávazných konzultací a ověřte si, jaké výsledky vám můžeme přinést.
+        Don't waste precious time. Take advantage of our non-binding consultations and see the results we can deliver.
       </p>
     </motion.div>
 
