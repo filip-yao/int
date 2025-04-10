@@ -11,8 +11,8 @@ import { Aperture, Camera, PenNib, ShareNetwork, ArrowRight } from '@phosphor-ic
 import { motion } from 'framer-motion';
 
 const projects = [
-  { id: 1, image: '/Slidshow_web/Renata.png', title: 'Osobní web a E-shop pro lektorku mandarínštiny', description: 'Komplexní e-commerce řešení s integrací platebního systému' },
-  { id: 2, image: '/Slidshow_web/Oskar.png', title: 'Osobní web a portfólio', description: 'Statická stránka s technologií React' },
+  { id: 1, image: '/Slidshow_web/Renata.png', title: 'Personal website and E-shop for a Mandarin teacher', description: 'Comprehensive e-commerce solution with payment system integration' },
+  { id: 2, image: '/Slidshow_web/Oskar.png', title: 'Personal website and portfolio', description: 'Static page with React technology' },
 ];
 
 const technologies = ['React', 'Next.js', 'Tailwind CSS', 'WordPress'];
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-5xl sm:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-blue-300"
         >
-          Moderní webová řešení
+          Modern Web Solutions
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-2xl mb-10"
         >
-          Vytváříme inovativní digitální zážitky
+          We create innovative digital experiences
         </motion.p>
         <motion.a 
           href="/contacts" 
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 px-8 rounded-full text-lg font-medium hover:from-purple-600 hover:to-blue-600 transition duration-300"
         >
-          Kontaktujte nás
+          Contact us
           <ArrowRight size={20} weight="bold" />
         </motion.a>
       </section>
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-white">Naše projekty</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">Our projects</h2>
           <div className="relative h-64 sm:h-96 overflow-hidden rounded-2xl">
             {projects.map((project, index) => (
               <motion.div
@@ -121,16 +121,16 @@ const Home: React.FC = () => {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-purple-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Spolupráce s našimi experty</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Collaboration with our experts</h2>
           <p className="text-lg mb-12 text-center">
-            Naši weboví vývojáři úzce spolupracují s našimi experty na grafiku, fotografii, video a sociální sítě, aby zajistili, že všechny prvky vašeho projektu budou dokonale sladěny.
+            Our web developers work closely with our experts in graphics, photography, video, and social media to ensure that all elements of your project are perfectly aligned.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: PenNib, title: "Grafika", description: "Vytváříme vizuálně atraktivní grafiku, která zaujme vaše publikum." },
-              { icon: Aperture, title: "Fotografie", description: "Profesionální fotografie, které dodají vašemu projektu autenticitu." },
-              { icon: Camera, title: "Video", description: "Kreativní videa, která vyprávějí váš příběh a zaujmou diváky." },
-              { icon: ShareNetwork, title: "Sociální sítě", description: "Efektivní strategie pro správu vašich sociálních sítí a zvýšení dosahu." }
+              { icon: PenNib, title: "Graphics", description: "We create visually attractive graphics that captivate your audience." },
+              { icon: Aperture, title: "Photography", description: "Professional photography that adds authenticity to your project." },
+              { icon: Camera, title: "Video", description: "Creative videos that tell your story and engage viewers." },
+              { icon: ShareNetwork, title: "Social Media", description: "Effective strategies for managing your social media and increasing reach." }
             ].map((item, index) => (
               <motion.div 
                 key={item.title}
@@ -155,15 +155,15 @@ const Home: React.FC = () => {
 
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-900 to-gray-900">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-white">Pojďme spolupracovat</h2>
-          <p className="text-xl mb-10 text-white/80">Připraveni posunout váš projekt na další úroveň?</p>
+          <h2 className="text-3xl font-bold mb-8 text-white">Let's collaborate</h2>
+          <p className="text-xl mb-10 text-white/80">Ready to take your project to the next level?</p>
           <motion.a 
             href="/contacts" 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 px-8 rounded-full text-lg font-medium hover:from-purple-600 hover:to-blue-600 transition duration-300"
           >
-            Napište nám
+            Write to us
             <ArrowRight size={20} weight="bold" />
           </motion.a>
         </div>
